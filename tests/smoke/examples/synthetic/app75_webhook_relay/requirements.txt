@@ -1,0 +1,6 @@
+fastapi==0.109.0
+uvicorn[standard]
+httpx
+psycopg2-binary
+pyyaml
+pydantic

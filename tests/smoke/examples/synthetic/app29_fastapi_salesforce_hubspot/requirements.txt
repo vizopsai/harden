@@ -1,0 +1,4 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+simple-salesforce==1.12.5
+hubspot-api-client==8.2.1

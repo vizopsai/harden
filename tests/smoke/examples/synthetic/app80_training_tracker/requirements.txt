@@ -1,0 +1,5 @@
+flask==3.0.0
+requests
+sendgrid==6.11.0
+python-dotenv
+gunicorn

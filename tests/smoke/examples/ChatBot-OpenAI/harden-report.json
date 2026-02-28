@@ -1,0 +1,121 @@
+{
+  "project_path": "/Users/p/w/vx/expt/sre_reading/test_apps/ChatBot-OpenAI",
+  "risk_score": 7,
+  "risk_level": "LOW",
+  "framework": {
+    "name": "fastapi",
+    "version": "0.100.0",
+    "entry_point": "app.py",
+    "confidence": 1.0
+  },
+  "app_spec": {
+    "app_type": "web",
+    "listen_port": 8001,
+    "is_async": true
+  },
+  "python_version": null,
+  "secrets": [],
+  "dependencies": [
+    {
+      "name": "fastapi",
+      "version": "0.100.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "pydantic",
+      "version": "1.10.11",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.0.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.23.1",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "langchain",
+      "version": "0.0.240",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "beautifulsoup4",
+      "version": "4.12.2",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "tiktoken",
+      "version": "0.4.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "httpx",
+      "version": "0.24.1",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "openai",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "chromadb",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    }
+  ],
+  "ai_usage": [
+    {
+      "provider": "LangChain",
+      "sdk": "langchain",
+      "config_method": "unknown",
+      "files": [
+        "controllers/chat.py"
+      ]
+    }
+  ],
+  "external_services": [],
+  "risks": [
+    {
+      "severity": "medium",
+      "category": "security",
+      "title": "Missing .gitignore",
+      "description": "No .gitignore file found. This may lead to accidental commits of sensitive files.",
+      "remediation": "Create a .gitignore file and add common patterns (*.env, __pycache__, etc.)",
+      "files": []
+    }
+  ]
+}

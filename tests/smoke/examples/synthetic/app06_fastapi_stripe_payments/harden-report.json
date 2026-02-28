@@ -1,0 +1,86 @@
+{
+  "project_path": "/Users/p/w/vx/expt/sre_reading/test_apps/synthetic/app06_fastapi_stripe_payments",
+  "risk_score": 19,
+  "risk_level": "LOW",
+  "framework": {
+    "name": "fastapi",
+    "version": null,
+    "entry_point": "main.py",
+    "confidence": 0.88
+  },
+  "app_spec": {
+    "app_type": "web",
+    "listen_port": 8000,
+    "is_async": true
+  },
+  "python_version": null,
+  "secrets": [
+    {
+      "file": ".env",
+      "line": 0,
+      "type": "env_file_present",
+      "description": "Environment file detected \u2014 may contain secrets",
+      "value_preview": ".env",
+      "severity": "medium"
+    },
+    {
+      "file": ".env",
+      "line": 0,
+      "type": "unignored_env_file",
+      "description": "Environment file exists but no .gitignore found",
+      "value_preview": ".env",
+      "severity": "high"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "fastapi",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "uvicorn",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "stripe",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    }
+  ],
+  "ai_usage": [],
+  "external_services": [
+    {
+      "provider": "Stripe",
+      "category": "payments",
+      "sdk": "stripe",
+      "auth_method": "api_key",
+      "domains": [
+        "api.stripe.com"
+      ],
+      "files": [
+        "main.py"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "severity": "medium",
+      "category": "security",
+      "title": "Missing .gitignore",
+      "description": "No .gitignore file found. This may lead to accidental commits of sensitive files.",
+      "remediation": "Create a .gitignore file and add common patterns (*.env, __pycache__, etc.)",
+      "files": []
+    }
+  ]
+}

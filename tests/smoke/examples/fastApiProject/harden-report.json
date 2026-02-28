@@ -1,0 +1,72 @@
+{
+  "project_path": "/Users/p/w/vx/expt/sre_reading/test_apps/fastApiProject",
+  "risk_score": 10,
+  "risk_level": "LOW",
+  "framework": {
+    "name": "fastapi",
+    "version": null,
+    "entry_point": "main.py",
+    "confidence": 0.96
+  },
+  "app_spec": {
+    "app_type": "web",
+    "listen_port": 8000,
+    "is_async": true
+  },
+  "python_version": null,
+  "secrets": [],
+  "dependencies": [
+    {
+      "name": "uvicorn",
+      "version": "0.30.0",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "fastapi",
+      "version": "0.111.0",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "openai",
+      "version": "1.30.5",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.0.1",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "requests",
+      "version": "2.32.3",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    }
+  ],
+  "ai_usage": [
+    {
+      "provider": "OpenAI",
+      "sdk": "openai",
+      "config_method": "env_var",
+      "files": [
+        "main.py"
+      ]
+    }
+  ],
+  "external_services": [],
+  "risks": []
+}

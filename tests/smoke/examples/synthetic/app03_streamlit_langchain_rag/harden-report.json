@@ -1,0 +1,131 @@
+{
+  "project_path": "/Users/p/w/vx/expt/sre_reading/test_apps/synthetic/app03_streamlit_langchain_rag",
+  "risk_score": 23,
+  "risk_level": "LOW",
+  "framework": {
+    "name": "streamlit",
+    "version": null,
+    "entry_point": "app.py",
+    "confidence": 1.0
+  },
+  "app_spec": {
+    "app_type": "web",
+    "listen_port": 8501,
+    "is_async": false
+  },
+  "python_version": null,
+  "secrets": [
+    {
+      "file": ".streamlit/secrets.toml",
+      "line": 1,
+      "type": "high_entropy_string",
+      "description": "High-entropy string in variable 'openai_api_key' (entropy: 4.33)",
+      "value_preview": "sk-f...7890",
+      "severity": "medium"
+    },
+    {
+      "file": ".streamlit/secrets.toml",
+      "line": 1,
+      "type": "high_entropy_string",
+      "description": "High-entropy string in variable 'openai_api_key' (entropy: 4.33)",
+      "value_preview": "sk-f...7890",
+      "severity": "medium"
+    },
+    {
+      "file": ".streamlit/secrets.toml",
+      "line": 0,
+      "type": "secrets_file_present",
+      "description": "Streamlit secrets file detected \u2014 likely contains API keys",
+      "value_preview": "secrets.toml",
+      "severity": "high"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "streamlit",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "langchain",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "langchain-openai",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "faiss-cpu",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "openai",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    }
+  ],
+  "ai_usage": [
+    {
+      "provider": "LangChain",
+      "sdk": "langchain",
+      "config_method": "unknown",
+      "files": [
+        "(dependency manifest)",
+        "app.py"
+      ]
+    },
+    {
+      "provider": "LangChain",
+      "sdk": "langchain-openai",
+      "config_method": "unknown",
+      "files": [
+        "(dependency manifest)"
+      ]
+    },
+    {
+      "provider": "OpenAI",
+      "sdk": "openai",
+      "config_method": "unknown",
+      "files": [
+        "(dependency manifest)"
+      ]
+    },
+    {
+      "provider": "FAISS",
+      "sdk": "faiss-cpu",
+      "config_method": "unknown",
+      "files": [
+        "(dependency manifest)"
+      ]
+    }
+  ],
+  "external_services": [],
+  "risks": [
+    {
+      "severity": "medium",
+      "category": "security",
+      "title": "Missing .gitignore",
+      "description": "No .gitignore file found. This may lead to accidental commits of sensitive files.",
+      "remediation": "Create a .gitignore file and add common patterns (*.env, __pycache__, etc.)",
+      "files": []
+    }
+  ]
+}

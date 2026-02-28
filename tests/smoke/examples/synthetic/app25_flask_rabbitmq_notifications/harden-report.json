@@ -1,0 +1,106 @@
+{
+  "project_path": "/Users/p/w/vx/expt/sre_reading/test_apps/synthetic/app25_flask_rabbitmq_notifications",
+  "risk_score": 26,
+  "risk_level": "MEDIUM",
+  "framework": {
+    "name": "flask",
+    "version": "3.0.0",
+    "entry_point": "app.py",
+    "confidence": 0.72
+  },
+  "app_spec": {
+    "app_type": "web",
+    "listen_port": 5000,
+    "is_async": false
+  },
+  "python_version": null,
+  "secrets": [
+    {
+      "file": ".env",
+      "line": 0,
+      "type": "env_file_present",
+      "description": "Environment file detected \u2014 may contain secrets",
+      "value_preview": ".env",
+      "severity": "medium"
+    },
+    {
+      "file": ".env",
+      "line": 0,
+      "type": "unignored_env_file",
+      "description": "Environment file exists but no .gitignore found",
+      "value_preview": ".env",
+      "severity": "high"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "flask",
+      "version": "3.0.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "pika",
+      "version": "1.3.2",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "requests",
+      "version": "2.31.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    }
+  ],
+  "ai_usage": [],
+  "external_services": [
+    {
+      "provider": "RabbitMQ",
+      "category": "message_queue",
+      "sdk": "pika",
+      "auth_method": "connection_string",
+      "domains": [],
+      "files": [
+        "app.py"
+      ]
+    },
+    {
+      "provider": "HTTP API (api.sendgrid.com)",
+      "category": "http_api",
+      "sdk": "requests/httpx",
+      "auth_method": "api_key",
+      "domains": [
+        "api.sendgrid.com"
+      ],
+      "files": [
+        "app.py"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "severity": "medium",
+      "category": "security",
+      "title": "Missing .gitignore",
+      "description": "No .gitignore file found. This may lead to accidental commits of sensitive files.",
+      "remediation": "Create a .gitignore file and add common patterns (*.env, __pycache__, etc.)",
+      "files": []
+    },
+    {
+      "severity": "high",
+      "category": "security",
+      "title": "Debug mode enabled",
+      "description": "Flask debug mode is enabled, which exposes sensitive information.",
+      "remediation": "Set debug=False in production environments",
+      "files": [
+        "app.py"
+      ]
+    }
+  ]
+}

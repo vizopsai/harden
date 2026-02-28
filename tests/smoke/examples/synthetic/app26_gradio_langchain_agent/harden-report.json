@@ -1,0 +1,114 @@
+{
+  "project_path": "/Users/p/w/vx/expt/sre_reading/test_apps/synthetic/app26_gradio_langchain_agent",
+  "risk_score": 3,
+  "risk_level": "LOW",
+  "framework": {
+    "name": "gradio",
+    "version": "4.8.0",
+    "entry_point": "app.py",
+    "confidence": 0.88
+  },
+  "app_spec": {
+    "app_type": "web",
+    "listen_port": 7860,
+    "is_async": false
+  },
+  "python_version": null,
+  "secrets": [],
+  "dependencies": [
+    {
+      "name": "gradio",
+      "version": "4.8.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "langchain",
+      "version": "0.0.335",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "langchain-openai",
+      "version": "0.0.2",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "langchain-community",
+      "version": "0.0.1",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "duckduckgo-search",
+      "version": "4.1.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    }
+  ],
+  "ai_usage": [
+    {
+      "provider": "LangChain",
+      "sdk": "langchain",
+      "config_method": "unknown",
+      "files": [
+        "(dependency manifest)",
+        "app.py"
+      ]
+    },
+    {
+      "provider": "LangChain",
+      "sdk": "langchain-community",
+      "config_method": "unknown",
+      "files": [
+        "(dependency manifest)"
+      ]
+    },
+    {
+      "provider": "LangChain",
+      "sdk": "langchain-openai",
+      "config_method": "unknown",
+      "files": [
+        "(dependency manifest)"
+      ]
+    },
+    {
+      "provider": "LangChain",
+      "sdk": "langchain_openai",
+      "config_method": "unknown",
+      "files": [
+        "app.py"
+      ]
+    },
+    {
+      "provider": "LangChain",
+      "sdk": "langchain_community",
+      "config_method": "unknown",
+      "files": [
+        "app.py"
+      ]
+    }
+  ],
+  "external_services": [],
+  "risks": [
+    {
+      "severity": "medium",
+      "category": "security",
+      "title": "Missing .gitignore",
+      "description": "No .gitignore file found. This may lead to accidental commits of sensitive files.",
+      "remediation": "Create a .gitignore file and add common patterns (*.env, __pycache__, etc.)",
+      "files": []
+    }
+  ]
+}

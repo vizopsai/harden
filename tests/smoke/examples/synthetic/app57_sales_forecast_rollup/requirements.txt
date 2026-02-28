@@ -1,0 +1,4 @@
+streamlit==1.31.0
+pandas
+simple-salesforce==1.12.5
+python-dotenv

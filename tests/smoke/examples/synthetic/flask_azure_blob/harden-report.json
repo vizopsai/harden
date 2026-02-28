@@ -1,0 +1,91 @@
+{
+  "project_path": "/Users/p/w/vx/expt/sre_reading/test_apps/synthetic/flask_azure_blob",
+  "risk_score": 21,
+  "risk_level": "LOW",
+  "framework": {
+    "name": "flask",
+    "version": "3.0.0",
+    "entry_point": "app.py",
+    "confidence": 1.0
+  },
+  "app_spec": {
+    "app_type": "web",
+    "listen_port": 5000,
+    "is_async": false
+  },
+  "python_version": null,
+  "secrets": [
+    {
+      "file": ".env",
+      "line": 0,
+      "type": "env_file_present",
+      "description": "Environment file detected \u2014 may contain secrets",
+      "value_preview": ".env",
+      "severity": "medium"
+    },
+    {
+      "file": ".env",
+      "line": 0,
+      "type": "unignored_env_file",
+      "description": "Environment file exists but no .gitignore found",
+      "value_preview": ".env",
+      "severity": "high"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "flask",
+      "version": "3.0.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "azure-storage-blob",
+      "version": "12.19.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "azure-identity",
+      "version": "1.15.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.0.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    }
+  ],
+  "ai_usage": [],
+  "external_services": [],
+  "risks": [
+    {
+      "severity": "medium",
+      "category": "security",
+      "title": "Missing .gitignore",
+      "description": "No .gitignore file found. This may lead to accidental commits of sensitive files.",
+      "remediation": "Create a .gitignore file and add common patterns (*.env, __pycache__, etc.)",
+      "files": []
+    },
+    {
+      "severity": "high",
+      "category": "security",
+      "title": "Debug mode enabled",
+      "description": "Flask debug mode is enabled, which exposes sensitive information.",
+      "remediation": "Set debug=False in production environments",
+      "files": [
+        "app.py"
+      ]
+    }
+  ]
+}

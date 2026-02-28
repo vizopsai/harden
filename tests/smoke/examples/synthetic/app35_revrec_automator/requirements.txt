@@ -1,0 +1,7 @@
+flask==3.0.0
+requests
+python-dateutil
+sqlalchemy>=2.0
+psycopg2-binary
+stripe==7.8.0
+python-dotenv

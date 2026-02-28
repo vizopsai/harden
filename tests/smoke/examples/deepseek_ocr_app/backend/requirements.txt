@@ -1,0 +1,17 @@
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+transformers==4.46.3
+tokenizers==0.20.3
+accelerate>=0.34.2
+einops
+addict
+easydict
+pillow
+safetensors
+torch
+python-decouple>=3.8
+PyMuPDF>=1.23.0
+img2pdf>=0.5.0
+python-docx>=1.1.0
+markdown>=3.5.0

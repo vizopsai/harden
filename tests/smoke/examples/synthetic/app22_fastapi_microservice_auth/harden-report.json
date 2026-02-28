@@ -1,0 +1,85 @@
+{
+  "project_path": "/Users/p/w/vx/expt/sre_reading/test_apps/synthetic/app22_fastapi_microservice_auth",
+  "risk_score": 3,
+  "risk_level": "LOW",
+  "framework": {
+    "name": "fastapi",
+    "version": "0.104.1",
+    "entry_point": "main.py",
+    "confidence": 0.8
+  },
+  "app_spec": {
+    "app_type": "web",
+    "listen_port": 8000,
+    "is_async": false
+  },
+  "python_version": null,
+  "secrets": [],
+  "dependencies": [
+    {
+      "name": "fastapi",
+      "version": "0.104.1",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.24.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "pyjwt",
+      "version": "2.8.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "requests",
+      "version": "2.31.0",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "passlib",
+      "version": "1.7.4",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    }
+  ],
+  "ai_usage": [],
+  "external_services": [
+    {
+      "provider": "HTTP API (auth.company.com)",
+      "category": "http_api",
+      "sdk": "requests/httpx",
+      "auth_method": "oauth",
+      "domains": [
+        "auth.company.com"
+      ],
+      "files": [
+        "main.py"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "severity": "medium",
+      "category": "security",
+      "title": "Missing .gitignore",
+      "description": "No .gitignore file found. This may lead to accidental commits of sensitive files.",
+      "remediation": "Create a .gitignore file and add common patterns (*.env, __pycache__, etc.)",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+streamlit==1.31.0
+pandas
+python-dotenv==1.0.0
+requests
+google-ads==23.1.0
+facebook-business==19.0.0

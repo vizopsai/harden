@@ -1,0 +1,53 @@
+[project]
+name = "harden"
+version = "0.1.0"
+description = "Open-source CLI for analyzing Python apps and generating Dockerfile + SBOM"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+dependencies = [
+    "click>=8.0.0",
+    "pyyaml>=6.0",
+    "rich>=13.0.0",
+]
+
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/vizopsai/harden"
+Repository = "https://github.com/vizopsai/harden"
+"Bug Tracker" = "https://github.com/vizopsai/harden/issues"
+Changelog = "https://github.com/vizopsai/harden/releases"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+]
+ai = [
+    "anthropic>=0.40",
+]
+
+[project.scripts]
+harden = "harden.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["harden"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: marks tests that require external services or long setup",
+]

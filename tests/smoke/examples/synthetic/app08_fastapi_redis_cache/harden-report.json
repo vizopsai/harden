@@ -1,0 +1,76 @@
+{
+  "project_path": "/Users/p/w/vx/expt/sre_reading/test_apps/synthetic/app08_fastapi_redis_cache",
+  "risk_score": 34,
+  "risk_level": "MEDIUM",
+  "framework": {
+    "name": "fastapi",
+    "version": null,
+    "entry_point": "main.py",
+    "confidence": 0.96
+  },
+  "app_spec": {
+    "app_type": "web",
+    "listen_port": 6379,
+    "is_async": true
+  },
+  "python_version": null,
+  "secrets": [
+    {
+      "file": "main.py",
+      "line": 20,
+      "type": "password_assignment",
+      "description": "Password in code",
+      "value_preview": "pass...123\"",
+      "severity": "critical"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "fastapi",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "uvicorn",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "redis",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    }
+  ],
+  "ai_usage": [],
+  "external_services": [
+    {
+      "provider": "Redis",
+      "category": "database",
+      "sdk": "redis",
+      "auth_method": "unknown",
+      "domains": [],
+      "files": [
+        "main.py"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "severity": "medium",
+      "category": "security",
+      "title": "Missing .gitignore",
+      "description": "No .gitignore file found. This may lead to accidental commits of sensitive files.",
+      "remediation": "Create a .gitignore file and add common patterns (*.env, __pycache__, etc.)",
+      "files": []
+    }
+  ]
+}

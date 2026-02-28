@@ -1,0 +1,225 @@
+{
+  "project_path": "/Users/p/w/vx/expt/sre_reading/harden/tests/smoke/examples/deepseek_ocr_app",
+  "risk_score": 38,
+  "risk_level": "MEDIUM",
+  "framework": {
+    "name": "fastapi",
+    "version": ">=0.104.0",
+    "entry_point": "backend/main.py",
+    "confidence": 0.8
+  },
+  "app_spec": {
+    "app_type": "web",
+    "listen_port": 8000,
+    "is_async": true
+  },
+  "python_version": null,
+  "secrets": [
+    {
+      "file": ".env.example",
+      "line": 0,
+      "type": "env_file_present",
+      "description": "Environment file detected \u2014 may contain secrets",
+      "value_preview": ".env.example",
+      "severity": "medium"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "fastapi",
+      "version": "0.104.0",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.24.0",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "python-multipart",
+      "version": "0.0.6",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "transformers",
+      "version": "4.46.3",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.20.3",
+      "pinned": true,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "accelerate",
+      "version": "0.34.2",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "einops",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "addict",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "easydict",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "pillow",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": true,
+      "cve_details": [
+        "Buffer overflow vulnerability (CVE-2023-44271)"
+      ],
+      "severity": "high"
+    },
+    {
+      "name": "safetensors",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "torch",
+      "version": null,
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "python-decouple",
+      "version": "3.8",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "pymupdf",
+      "version": "1.23.0",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "img2pdf",
+      "version": "0.5.0",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "python-docx",
+      "version": "1.1.0",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    },
+    {
+      "name": "markdown",
+      "version": "3.5.0",
+      "pinned": false,
+      "has_known_cves": false,
+      "cve_details": [],
+      "severity": "low"
+    }
+  ],
+  "ai_usage": [
+    {
+      "provider": "HuggingFace",
+      "sdk": "accelerate",
+      "config_method": "unknown",
+      "files": [
+        "(dependency manifest)"
+      ]
+    },
+    {
+      "provider": "HuggingFace",
+      "sdk": "transformers",
+      "config_method": "env_var",
+      "files": [
+        "(dependency manifest)",
+        "backend/main.py"
+      ]
+    },
+    {
+      "provider": "PyTorch",
+      "sdk": "torch",
+      "config_method": "env_var",
+      "files": [
+        "(dependency manifest)",
+        "backend/main.py"
+      ]
+    },
+    {
+      "provider": "HuggingFace",
+      "sdk": "autotokenizer",
+      "config_method": "unknown",
+      "files": [
+        "(detected by LLM)"
+      ]
+    },
+    {
+      "provider": "HuggingFace",
+      "sdk": "automodel",
+      "config_method": "unknown",
+      "files": [
+        "(detected by LLM)"
+      ]
+    }
+  ],
+  "external_services": [
+    {
+      "provider": "Word (local)",
+      "category": "office",
+      "sdk": "docx",
+      "auth_method": "none",
+      "domains": [],
+      "files": [
+        "(dependency manifest)",
+        "backend/format_converter.py"
+      ]
+    }
+  ],
+  "risks": []
+}
