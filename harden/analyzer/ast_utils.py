@@ -7,6 +7,7 @@ instead of regex.
 
 import ast
 import re
+import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
@@ -244,10 +245,21 @@ def extract_urls(source: str) -> List[Tuple[str, int]]:
     return urls
 
 
+_VALID_DOMAIN_RE = re.compile(
+    r'^[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?'
+    r'(\.[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?)+$'
+)
+
+
 def _extract_domain(url: str) -> Optional[str]:
-    """Extract domain from a URL string."""
+    """Extract domain from a URL string. Returns None for non-FQDN values."""
     m = re.search(r'https?://([^/:?\s]+)', url)
-    return m.group(1) if m else None
+    if not m:
+        return None
+    domain = m.group(1)
+    if domain == "localhost" or _VALID_DOMAIN_RE.match(domain):
+        return domain
+    return None
 
 
 def extract_domains_from_urls(source: str) -> Set[str]:
@@ -355,13 +367,13 @@ def normalise_package_name(name: str) -> str:
     return name.lower().replace("-", "_").replace(".", "_")
 
 
-# Common stdlib root modules
-STDLIB_ROOTS = frozenset({
-    "os", "sys", "re", "json", "math", "time", "datetime", "pathlib",
-    "collections", "functools", "itertools", "typing", "abc", "io",
-    "subprocess", "threading", "multiprocessing", "logging", "warnings",
-    "unittest", "dataclasses", "enum", "copy", "hashlib", "hmac",
-    "base64", "secrets", "string", "textwrap", "struct", "csv",
+# Common stdlib root modules (baseline for Python 3.8-3.9)
+_STDLIB_BASELINE = frozenset({
+    "__future__", "os", "sys", "re", "json", "math", "time", "datetime",
+    "pathlib", "collections", "functools", "itertools", "typing", "abc",
+    "io", "subprocess", "threading", "multiprocessing", "logging",
+    "warnings", "unittest", "dataclasses", "enum", "copy", "hashlib",
+    "hmac", "base64", "secrets", "string", "textwrap", "struct", "csv",
     "html", "xml", "http", "urllib", "email", "socket", "ssl",
     "asyncio", "concurrent", "queue", "signal", "tempfile", "shutil",
     "glob", "fnmatch", "stat", "zipfile", "gzip", "tarfile",
@@ -374,4 +386,14 @@ STDLIB_ROOTS = frozenset({
     "_thread", "posixpath", "ntpath", "genericpath", "encodings",
     "codecs", "locale", "gettext", "calendar", "sched", "doctest",
     "site", "sysconfig", "venv", "distutils", "setuptools", "pip",
+    "types", "numbers", "cmath", "difflib", "reprlib", "timeit",
+    "profile", "cProfile", "pstats", "webbrowser", "mimetypes",
+    "lzma", "zipimport", "runpy", "unicodedata", "wave",
 })
+
+# Use sys.stdlib_module_names (Python 3.10+) for a complete, authoritative list
+STDLIB_ROOTS = (
+    _STDLIB_BASELINE | frozenset(sys.stdlib_module_names)
+    if hasattr(sys, "stdlib_module_names")
+    else _STDLIB_BASELINE
+)
