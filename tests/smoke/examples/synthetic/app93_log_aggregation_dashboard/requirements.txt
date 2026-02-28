@@ -1,4 +1,0 @@
-streamlit>=1.28
-pandas
-elasticsearch>=8.0
-requests

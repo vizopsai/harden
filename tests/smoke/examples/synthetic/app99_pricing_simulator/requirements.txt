@@ -1,4 +1,0 @@
-streamlit>=1.28
-pandas
-numpy
-stripe>=7.0

@@ -1,5 +1,0 @@
-streamlit>=1.28
-pandas
-numpy
-requests
-openpyxl>=3.1

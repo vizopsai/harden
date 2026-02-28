@@ -1,4 +1,0 @@
-fastapi==0.104.1
-uvicorn==0.24.0
-together==0.2.10
-python-dotenv==1.0.0

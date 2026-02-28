@@ -1,4 +1,0 @@
-streamlit==1.31.0
-pandas
-requests
-python-dotenv==1.0.0

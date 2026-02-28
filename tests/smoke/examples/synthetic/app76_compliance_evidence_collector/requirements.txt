@@ -1,5 +1,0 @@
-fastapi==0.109.0
-uvicorn[standard]
-requests
-boto3==1.34.0
-pydantic

@@ -1,5 +1,0 @@
-streamlit==1.29.0
-pandas>=2.0
-simple-salesforce==1.12.5
-requests
-openpyxl

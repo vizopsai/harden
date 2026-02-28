@@ -1,4 +1,0 @@
-gradio>=4.15
-openai>=1.12
-chromadb>=0.4.22
-tiktoken

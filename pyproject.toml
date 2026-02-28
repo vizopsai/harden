@@ -1,6 +1,6 @@
 [project]
 name = "harden"
-version = "0.1.0"
+version = "0.1.1"
 description = "Open-source CLI for analyzing Python apps and generating Dockerfile + SBOM"
 readme = "README.md"
 license = { file = "LICENSE" }

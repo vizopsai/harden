@@ -1,5 +1,0 @@
-streamlit
-langchain
-langchain-openai
-faiss-cpu
-openai
